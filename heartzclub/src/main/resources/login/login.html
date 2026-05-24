@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../components/styles/global.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    
+    <form action="javascript:void(0);" method="post">
+        <h1>Login</h1>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <!-- <p><a href="../esqueceu_senha/esqueceu_senha.html">Esqueceu a senha?</a></p> -->
+            <p><a href="/heartzclub/src/main/resources/telaTemporario/temporario.html">Esqueceu a senha?</a></p>
+        </div>
+
+        <button type="button" onclick="logar()">Entrar</button>
+        <p><a href="/heartzclub/src/main/resources/cadastro/cadastro.html">Não tem conta? <br> Criar conta!</a></p>
+    </form>
+    <footer>
+
+    </footer>
+    <script src="../components/inlcuide.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

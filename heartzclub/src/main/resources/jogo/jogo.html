@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo | Heartz Club</title>
+
+    <link rel="stylesheet" href="../components/styles/global.css">
+    <link rel="stylesheet" href="jogo.css">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<main class="game-page">
+
+    <!-- BANNER -->
+    <section class="game-banner">
+        <img id="banner-img" src="" class="banner-img" alt="">
+        <div class="banner-overlay"></div>
+    </section>
+
+    <!-- CONTEÚDO -->
+    <section class="game-content">
+        <div class="game-info">
+
+            <img id="cover-img" src="" class="game-cover" alt="">
+
+            <div class="game-details">
+
+                <h1 id="game-title" class="game-title">Carregando...</h1>
+
+                <div class="game-stats">
+                    <div class="stat-card">
+                        <h3>Avaliação</h3>
+                        <p id="stat-nota">— ⭐</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Gênero</h3>
+                        <p id="stat-genero">—</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Média</h3>
+                        <p id="stat-media">—</p>
+                    </div>
+                </div>
+
+                <div class="game-actions">
+                    <button class="action-button">⭐ Avaliar</button>
+                    <button class="action-button">🎮 Marcar como jogado</button>
+                    <button class="action-button">❤️ Favoritar</button>
+                </div>
+
+                <p id="game-description" class="game-description">—</p>
+
+                <!-- COMENTÁRIOS -->
+                <section class="comments-section">
+                    <h2 class="comments-title">Comentários</h2>
+
+                    <!-- FORM — só aparece se logado -->
+                    <div id="comment-form-area" class="comment-form">
+                        <textarea id="comment-input" placeholder="Compartilhe sua experiência..."
+                                  class="comment-input"></textarea>
+                        <button class="comment-button" onclick="enviarComentario()">Comentar</button>
+                        <p id="comment-error" style="color:#e57373; display:none; margin-top:8px;"></p>
+                    </div>
+
+                    <!-- AVISO se não estiver logado -->
+                    <div id="comment-login-notice" style="display:none; margin-bottom:24px; color:#aaa;">
+                        <a href="/heartzclub/src/main/resources/login/login.html"
+                           style="color:#c89b3c; text-decoration:underline;">Faça login</a>
+                        para deixar um comentário.
+                    </div>
+
+                    <!-- LISTA DE COMENTÁRIOS -->
+                    <div id="comments-list" class="comments-list">
+                        <p style="color:#aaa;">Carregando comentários...</p>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer"></div>
+<script src="../components/inlcuide.js"></script>
+<script src="jogo.js"></script>
+
+</body>
+
+</html>

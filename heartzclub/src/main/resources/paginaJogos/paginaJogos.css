@@ -1,0 +1,198 @@
+/* CONTAINER */
+
+.catalogo {
+
+    padding: 40px;
+}
+
+/* TOPO */
+
+.catalogo__topo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+/* TITLE */
+
+.catalogo__title {
+
+    color: var(--gold);
+
+    font-size: 42px;
+}
+
+/* SEARCH */
+
+.catalogo__search {
+
+    width: 320px;
+
+    max-width: 100%;
+
+    padding: 12px 16px;
+
+    border: 2px solid var(--gold);
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,0.5);
+
+    color: white;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.catalogo__search:focus {
+
+    border-color: var(--gold-light);
+}
+
+/* GRID */
+
+.games {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 30px;
+}
+
+/* CARD */
+
+.game-card {
+
+    background:
+        rgba(0,0,0,0.45);
+
+    border:
+        2px solid var(--gold);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.game-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 0 20px rgba(200,155,60,0.3);
+}
+
+/* IMAGE */
+
+.game-card__img {
+
+    width: 100%;
+
+    height: 340px;
+
+    object-fit: cover;
+
+    background: #222;
+}
+
+/* CONTENT */
+
+.game-card__content {
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    flex: 1;
+}
+
+/* TITLE */
+
+.game-card__title {
+
+    color: white;
+
+    font-size: 24px;
+}
+
+/* GENRE */
+
+.game-card__genre {
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+/* RATING */
+
+.game-card__rating {
+
+    color: var(--gold-light);
+
+    font-size: 18px;
+
+    margin-top: auto;
+}
+
+/* BUTTON */
+
+.game-card__button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--gold);
+
+    color: black;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.game-card__button:hover {
+
+    background: var(--gold-light);
+
+    transform: scale(1.02);
+}
+
+/* LOADING */
+
+.loading {
+
+    color: #aaa;
+
+    font-size: 18px;
+}

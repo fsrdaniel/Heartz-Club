@@ -1,0 +1,75 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+  max-width: 2000px;
+  padding: 100px;
+  border: 0px solid #ccc;
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+/* Estilo para os parágrafos que contêm links */
+form p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px; 
+}
+
+/* Estilo específico dos links (<a>) */
+form a {
+    color: #c89b3c; 
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 16px; 
+    line-height: 1.5;
+    transition: 0.3s;
+}
+
+form a:hover {
+    color: #F2CB05; /* Cor mais clara ao passar o mouse */
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box; 
+  border-radius: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #F2CB05;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+button:hover {
+  background-color: #F2B705;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Reviews</title>
+    <link rel="stylesheet" href="pesquisa.css">
+    <link rel="stylesheet" href="/Heartz-Club/cabecalho/cabecalhoMenor.css">
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div class="area-busca">
+        <h2>Encontre seu Próximo Jogo</h2>
+        <form id="formBusca" style="display: flex; justify-content: center;">
+            <input type="text" id="inputPesquisa" class="input-busca-grande" placeholder="Ex: Elden Ring..." required>
+            <button type="submit" class="btn-busca-grande">Buscar</button>
+        </form>
+    </div>
+
+    <div id="containerResultados" class="grid-resultados"></div>
+
+    <script src="pesquisar-jogos.js"></script>
+    <script src="/Heartz-Club/cabecalho/inserirCabecalhoMenor.js"></script> </body>
+</html>

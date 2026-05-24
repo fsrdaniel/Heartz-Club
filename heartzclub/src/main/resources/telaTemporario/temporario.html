@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionalidade em Processo - Heartz Club</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        /* VARIÁVEIS DE COR DO SEU PROJETO */
+        :root {
+            --gold: #c89b3c;
+            --gold-hover: #e5b858;
+            --white: #ffffff;
+            --bg-card: rgba(0, 0, 0, 0.55);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* BODY COM O SEU GRADIENTE PADRÃO ESCURO */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Pixelify Sans', sans-serif;
+            background: 
+                radial-gradient(circle at left, rgba(200, 155, 60, 0.2), transparent 45%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.95), #000);
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 20px;
+        }
+
+        /* CONTAINER DA MENSAGEM */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 30px;
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            background: var(--bg-card);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ÍCONE DE ENGRENAGEM/CONSTRUÇÃO (RETRO GAMER) */
+        .icon {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 40px;
+            color: var(--gold);
+            margin-bottom: 25px;
+            display: inline-block;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        /* TÍTULO PRINCIPAL */
+        h2 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 16px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* TEXTO SOLICITADO */
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+            margin-bottom: 35px;
+        }
+
+        /* BOTÃO AMARELO/DOURADO */
+        .btn-voltar {
+            display: inline-block;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--gold);
+            color: #000000;
+            text-decoration: none;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(200, 155, 60, 0.3);
+        }
+
+        /* EFEITO AO PASSAR O MOUSE NO BOTÃO */
+        .btn-voltar:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(200, 155, 60, 0.5);
+        }
+
+        .btn-voltar:active {
+            transform: translateY(1px);
+        }
+
+        /* ANIMAÇÃO SUTIL DE PULSO NO ÍCONE */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="icon">⚙️</div>
+        
+        <h2>Funcionalidade em processo</h2>
+        
+        <p>Por favor entre em contato com o adm para mais ajuda.</p>
+        
+        <a href="/heartzclub/src/main/resources/home/home.html" class="btn-voltar">Voltar à Tela Principal</a>
+    </div>
+
+</body>
+</html>

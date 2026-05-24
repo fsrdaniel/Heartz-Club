@@ -1,0 +1,22 @@
+<form id="formSolicitar">
+    <div class="form-group">
+        <label for="email">E-mail Cadastrado</label>
+        <input type="email" id="email" name="email" placeholder="seu-email@exemplo.com" required>
+    </div>
+    <button type="submit" class="btn-enviar">Enviar Código</button>
+</form>
+
+<form id="formRedefinir" style="display: none;">
+    <p id="mensagemAviso" style="color: var(--gold); margin-bottom: 15px;">
+        Código enviado! Verifique seu e-mail.
+    </p>
+    <div class="form-group">
+        <label for="codigo">Código de 6 dígitos</label>
+        <input type="text" id="codigo" maxlength="6" placeholder="Ex: 123456" required>
+    </div>
+    <div class="form-group">
+        <label for="novaSenha">Nova Senha</label>
+        <input type="password" id="novaSenha" required>
+    </div>
+    <button type="submit" class="btn-enviar">Salvar Nova Senha</button>
+</form>

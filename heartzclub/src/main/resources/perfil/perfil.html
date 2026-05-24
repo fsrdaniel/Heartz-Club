@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../components/styles/global.css">
+  <link rel="stylesheet" href="styleperfil.css">
+  <title>Perfil | Heartz Club</title>
+
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <main class="profile">
+
+    <section class="profile__card">
+
+      <div class="profile__left">
+
+        <img id="profileAvatar" src="https://upload.wikimedia.org/wikipedia/en/9/9d/Bonzi_Buddy.png" class="profile__avatar">
+
+        <div class="profile__info">
+
+          <h2 class="profile__name" id="profileName">
+            <!-- Nome carregado via JS -->
+          </h2>
+
+          <p class="profile__description" id="profileDescription">
+            <!-- Descrição carregada via JS -->
+          </p>
+
+          <button id="editarPerfilBtn" class="btn-enviar" style="margin-top:12px;">Personalizar perfil</button>
+
+          <form id="editarPerfilForm" style="display:none; margin-top:12px;">
+            <div class="form-group">
+              <label for="inputNome">Nome</label>
+              <input type="text" id="inputNome" required />
+            </div>
+            <div class="form-group">
+              <label for="inputFoto">Foto de perfil</label>
+              <input type="file" id="inputFoto" accept="image/*" />
+            </div>
+            <button type="submit" class="btn-enviar">Salvar</button>
+            <button type="button" id="cancelEdit" class="btn-enviar" style="background:#ccc;margin-top:8px;">Cancelar</button>
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="profile__stats">
+
+        <div class="stats__group">
+
+          <div class="stat">
+
+            <h3 class="stat__title">
+              FOLLOWERS
+            </h3>
+
+            <p class="stat__number">
+              464
+            </p>
+
+          </div>
+
+          <div class="stat">
+
+            <h3 class="stat__title">
+              FOLLOWING
+            </h3>
+
+            <p class="stat__number">
+              2005
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="stats__group">
+
+          <div class="stat">
+
+            <h3 class="stat__title">
+              JOGOS
+            </h3>
+
+            <p class="stat__number">
+              46
+            </p>
+
+          </div>
+
+          <div class="stat">
+
+            <h3 class="stat__title">
+              PLATINAS
+            </h3>
+
+            <p class="stat__number">
+              5
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="games__section">
+
+      <h2 class="section__title">
+        Favoritos
+      </h2>
+
+      <ul class="games">
+        <li class="game">
+          <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" class="game__img">
+        </li>
+
+        <li class="game">
+          <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" class="game__img">
+        </li>
+        <li class="game">
+          <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" class="game__img">
+        </li>
+        <li class="game">
+          <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" class="game__img">
+        </li>
+        <li class="game">
+          <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" class="game__img">
+        </li>
+
+      </ul>
+
+    </section>
+
+  </main>
+  <div id="footer"></div>
+
+  <script src="/heartzclub/src/main/resources/components/inlcuide.js"></script>
+  <script src="perfil.js"></script>
+
+</body>
+
+</html>

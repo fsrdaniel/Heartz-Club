@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartz Club</title>
+
+    <link rel="stylesheet" href="../components/styles/global.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+
+
+<div id="header"></div>
+
+<main class="home">
+
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">
+                Grave os jogos que você já jogou.<br>
+                Salve aqueles que você quer jogar.<br>
+                Compartilhe sua experiência e divirta-se!!
+            </h1>
+            <button class="hero__button">
+                <a href="/heartzclub/src/main/resources/login/login.html">Divirta-se</a>
+            </button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section__title">Popular</h2>
+        <ul class="games" id="games-popular" aria-label="Jogos populares">
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section__title">Próximos lançamentos</h2>
+        <ul class="games" id="games-lancamentos" aria-label="Próximos lançamentos">
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+            <li class="game game--skeleton"><a href="#"><img class="game__img" alt=""></a></li>
+        </ul>
+    </section>
+
+</main>
+
+<div id="footer"></div>
+
+<script src="../components/inlcuide.js"></script>
+
+<script>
+    const API_BASE  = 'http://localhost:8080/api/jogos';
+    const JOGO_PAGE = '../jogo/jogo.html';
+
+    const PLACEHOLDER_IMG = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='267' viewBox='0 0 200 267'%3E%3Crect width='200' height='267' fill='%232a2a2a'/%3E%3Crect x='70' y='90' width='60' height='60' rx='6' fill='none' stroke='%23555' stroke-width='3'/%3E%3Cline x1='70' y1='90' x2='130' y2='150' stroke='%23555' stroke-width='3'/%3E%3Ccircle cx='85' cy='105' r='6' fill='%23555'/%3E%3Ctext x='100' y='175' text-anchor='middle' fill='%23666' font-family='sans-serif' font-size='11'%3ESem capa%3C/text%3E%3C/svg%3E`;
+
+    function criarItemJogo(jogo) {
+      const li      = document.createElement('li');
+      li.className  = 'game';
+
+      // Lê diretamente o campo imagemUrl que vem no JSON da API
+      const imgSrc  = jogo.imagemUrl || PLACEHOLDER_IMG;
+      const titulo  = jogo.nome || 'Jogo';
+      const jogoUrl = `${JOGO_PAGE}?id=${jogo.id}`;
+
+      li.innerHTML = `
+        <a href="${jogoUrl}" title="${titulo}">
+          <img
+            class="game__img"
+            src="${imgSrc}"
+            alt="${titulo}"
+            loading="lazy"
+            onerror="this.src='${PLACEHOLDER_IMG}'"
+          >
+        </a>
+      `;
+      return li;
+    }
+
+    function renderizarJogos(ul, jogos) {
+      ul.innerHTML = '';
+      if (!jogos || jogos.length === 0) {
+        ul.innerHTML = '<li class="games--empty">Nenhum jogo encontrado.</li>';
+        return;
+      }
+      jogos.forEach(j => ul.appendChild(criarItemJogo(j)));
+    }
+
+    function exibirErro(ul, msg) {
+      ul.innerHTML = `<li class="games--error">${msg}</li>`;
+    }
+
+    async function carregarJogos() {
+      const ulPopular     = document.getElementById('games-popular');
+      const ulLancamentos = document.getElementById('games-lancamentos');
+
+      try {
+        const res = await fetch(API_BASE, { headers: { 'Accept': 'application/json' } });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const jogos = await res.json();
+
+        // Popular → top 6 por mediaNotas decrescente
+        const populares = [...jogos]
+          .sort((a, b) => (b.mediaNotas ?? 0) - (a.mediaNotas ?? 0))
+          .slice(0, 6);
+
+        // Lançamentos → 4 cadastrados mais recentemente (maior id)
+        const lancamentos = [...jogos]
+          .sort((a, b) => b.id - a.id)
+          .slice(0, 4);
+
+        renderizarJogos(ulPopular, populares);
+        renderizarJogos(ulLancamentos, lancamentos);
+
+      } catch (err) {
+        console.error('[HeartzClub] Erro:', err);
+        exibirErro(ulPopular,     'Não foi possível carregar os jogos. Servidor está rodando?');
+        exibirErro(ulLancamentos, 'Não foi possível carregar os jogos. Servidor está rodando?');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarJogos);
+</script>
+
+</body>
+</html>
